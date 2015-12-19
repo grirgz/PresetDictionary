@@ -1,0 +1,747 @@
+
+ArchiveDictionary.load( 'glitch',
+
+							( 'name': 'glitch', 'load': { arg me; ~clipTimeline.new_load(me) }, 'tracks_bypassed': Set[  ], 'areasize': Point(10, 4), 
+  'quant_ref': `(Point(0.125, 1)), 'eventlist': ( 'load': { arg self;
+			~eventlist_loadArchiveData.(self)
+		}, 'eventlist': [ ( 'playDur': 0.0, 'dur': 0.0, 'sustain': 0, 'relDur': 0.0, 
+  'absTime': 0, 'type': 'start', 'label': 'start' ), ( 'playDur': 0.0, 'dur': 0.0, 'receiver': `(PlayerWrapper.new), 'sustain': 8.0, 
+  'midinote': 2.0, 'relDur': 0.0, 'absTime': 0.0, 'label': { arg ev;
+	var label;
+	var receiver = ev[\receiver].value;
+	label = if(receiver.notNil) {
+		if(receiver.isKindOf(PlayerWrapper)) {
+			receiver = receiver.target;
+		};
+		if(
+			receiver.isKindOf(Ndef) or: {
+				receiver.isKindOf(Pdef)
+			}
+		) {
+			"% %".format(receiver.class, receiver.key);
+		} {
+			receiver.asCompileString; // FIXME: could be very long
+		}
+	} {
+		var type;
+		//type =  ev[\nodeType] ? ev[\type] ? ev[\eventType] ?
+		if(ev[\eventType] == \pattern) {
+			if(ev[\pattern].isKindOf(Pdef)) {
+				"% %".format(ev[\pattern].class, ev[\pattern].key);
+			} {
+				if(ev[\key].notNil) {
+					"Pdef %".format(ev[\key])
+				}
+			}
+		};
+		if(ev[\type] == \timeline) {
+			ev.timeline.label
+		}
+	};
+	label = label ?? { "No Name" };
+	label
+}, 'type': 'player' ), ( 'eventlist': { arg self;
+		self.timeline.eventList
+	}, 'playDur': 6.0, 'dur': 6.0, 'sustain': 8.0, 
+  'midinote': 1.0, 'timeline': ( 'load': { arg me; ~modStepTimeline.new(me.key) }, 'key': 'glitch' ), 'relDur': 6.0, 'absTime': 0.0, 'label': { arg ev;
+	var label;
+	var receiver = ev[\receiver].value;
+	label = if(receiver.notNil) {
+		if(receiver.isKindOf(PlayerWrapper)) {
+			receiver = receiver.target;
+		};
+		if(
+			receiver.isKindOf(Ndef) or: {
+				receiver.isKindOf(Pdef)
+			}
+		) {
+			"% %".format(receiver.class, receiver.key);
+		} {
+			receiver.asCompileString; // FIXME: could be very long
+		}
+	} {
+		var type;
+		//type =  ev[\nodeType] ? ev[\type] ? ev[\eventType] ?
+		if(ev[\eventType] == \pattern) {
+			if(ev[\pattern].isKindOf(Pdef)) {
+				"% %".format(ev[\pattern].class, ev[\pattern].key);
+			} {
+				if(ev[\key].notNil) {
+					"Pdef %".format(ev[\key])
+				}
+			}
+		};
+		if(ev[\type] == \timeline) {
+			ev.timeline.label
+		}
+	};
+	label = label ?? { "No Name" };
+	label
+}, 
+  'type': 'timeline' ), ( 'playDur': 2.0, 'dur': 2.0, 'receiver': `(Pdef('rip')), 'isEmbeddable': true, 
+  'sustain': 2.0, 'midinote': 3.0, 'key': { arg self;
+		if(self.receiver.notNil) {
+			self.receiver.value.key
+		}
+	}, 'absTime': 6.0, 'embedEvent': { arg self, inval;
+		self.pattern.embedInStream(inval);
+	}, 
+  'pattern': { arg self;
+		if(self.key.notNil) {
+			Pdef(self.key);
+		};
+	}, 'eventType': 'pattern', 'relDur': 2.0, 'label': { arg ev;
+	var label;
+	var receiver = ev[\receiver].value;
+	label = if(receiver.notNil) {
+		if(receiver.isKindOf(PlayerWrapper)) {
+			receiver = receiver.target;
+		};
+		if(
+			receiver.isKindOf(Ndef) or: {
+				receiver.isKindOf(Pdef)
+			}
+		) {
+			"% %".format(receiver.class, receiver.key);
+		} {
+			receiver.asCompileString; // FIXME: could be very long
+		}
+	} {
+		var type;
+		//type =  ev[\nodeType] ? ev[\type] ? ev[\eventType] ?
+		if(ev[\eventType] == \pattern) {
+			if(ev[\pattern].isKindOf(Pdef)) {
+				"% %".format(ev[\pattern].class, ev[\pattern].key);
+			} {
+				if(ev[\key].notNil) {
+					"Pdef %".format(ev[\key])
+				}
+			}
+		};
+		if(ev[\type] == \timeline) {
+			ev.timeline.label
+		}
+	};
+	label = label ?? { "No Name" };
+	label
+}, 'type': 'pattern' ), ( 'playDur': 0.0, 'dur': 0.0, 'receiver': `(Pdef('glitch')), 'isEmbeddable': true, 
+  'sustain': 9.0, 'midinote': 0.0, 'key': { arg self;
+		if(self.receiver.notNil) {
+			self.receiver.value.key
+		}
+	}, 'absTime': 8.0, 'embedEvent': { arg self, inval;
+		self.pattern.embedInStream(inval);
+	}, 
+  'pattern': { arg self;
+		if(self.key.notNil) {
+			Pdef(self.key);
+		};
+	}, 'eventType': 'pattern', 'relDur': 0.0, 'label': { arg ev;
+	var label;
+	var receiver = ev[\receiver].value;
+	label = if(receiver.notNil) {
+		if(receiver.isKindOf(PlayerWrapper)) {
+			receiver = receiver.target;
+		};
+		if(
+			receiver.isKindOf(Ndef) or: {
+				receiver.isKindOf(Pdef)
+			}
+		) {
+			"% %".format(receiver.class, receiver.key);
+		} {
+			receiver.asCompileString; // FIXME: could be very long
+		}
+	} {
+		var type;
+		//type =  ev[\nodeType] ? ev[\type] ? ev[\eventType] ?
+		if(ev[\eventType] == \pattern) {
+			if(ev[\pattern].isKindOf(Pdef)) {
+				"% %".format(ev[\pattern].class, ev[\pattern].key);
+			} {
+				if(ev[\key].notNil) {
+					"Pdef %".format(ev[\key])
+				}
+			}
+		};
+		if(ev[\type] == \timeline) {
+			ev.timeline.label
+		}
+	};
+	label = label ?? { "No Name" };
+	label
+}, 'type': 'pattern' ), ( 'eventlist': { arg self;
+		self.timeline.eventList
+	}, 'playDur': 6.0, 'dur': 6.0, 'sustain': 8.0, 
+  'midinote': 1.0, 'timeline': ( 'load': { arg me; ~modStepTimeline.new(me.key) }, 'key': 'glitch2' ), 'relDur': 6.0, 'absTime': 8.0, 'label': { arg ev;
+	var label;
+	var receiver = ev[\receiver].value;
+	label = if(receiver.notNil) {
+		if(receiver.isKindOf(PlayerWrapper)) {
+			receiver = receiver.target;
+		};
+		if(
+			receiver.isKindOf(Ndef) or: {
+				receiver.isKindOf(Pdef)
+			}
+		) {
+			"% %".format(receiver.class, receiver.key);
+		} {
+			receiver.asCompileString; // FIXME: could be very long
+		}
+	} {
+		var type;
+		//type =  ev[\nodeType] ? ev[\type] ? ev[\eventType] ?
+		if(ev[\eventType] == \pattern) {
+			if(ev[\pattern].isKindOf(Pdef)) {
+				"% %".format(ev[\pattern].class, ev[\pattern].key);
+			} {
+				if(ev[\key].notNil) {
+					"Pdef %".format(ev[\key])
+				}
+			}
+		};
+		if(ev[\type] == \timeline) {
+			ev.timeline.label
+		}
+	};
+	label = label ?? { "No Name" };
+	label
+}, 
+  'type': 'timeline' ), ( 'playDur': 2.0, 'dur': 2.0, 'receiver': `(Pdef('rip')), 'isEmbeddable': true, 
+  'sustain': 2.0, 'midinote': 3.0, 'key': { arg self;
+		if(self.receiver.notNil) {
+			self.receiver.value.key
+		}
+	}, 'absTime': 14.0, 'embedEvent': { arg self, inval;
+		self.pattern.embedInStream(inval);
+	}, 
+  'pattern': { arg self;
+		if(self.key.notNil) {
+			Pdef(self.key);
+		};
+	}, 'eventType': 'pattern', 'relDur': 2.0, 'label': { arg ev;
+	var label;
+	var receiver = ev[\receiver].value;
+	label = if(receiver.notNil) {
+		if(receiver.isKindOf(PlayerWrapper)) {
+			receiver = receiver.target;
+		};
+		if(
+			receiver.isKindOf(Ndef) or: {
+				receiver.isKindOf(Pdef)
+			}
+		) {
+			"% %".format(receiver.class, receiver.key);
+		} {
+			receiver.asCompileString; // FIXME: could be very long
+		}
+	} {
+		var type;
+		//type =  ev[\nodeType] ? ev[\type] ? ev[\eventType] ?
+		if(ev[\eventType] == \pattern) {
+			if(ev[\pattern].isKindOf(Pdef)) {
+				"% %".format(ev[\pattern].class, ev[\pattern].key);
+			} {
+				if(ev[\key].notNil) {
+					"Pdef %".format(ev[\key])
+				}
+			}
+		};
+		if(ev[\type] == \timeline) {
+			ev.timeline.label
+		}
+	};
+	label = label ?? { "No Name" };
+	label
+}, 'type': 'pattern' ), ( 'playDur': 0.0, 'dur': 0.0, 'receiver': `(PlayerWrapper.new), 'sustain': 8.0, 
+  'midinote': 2.0, 'relDur': 0.0, 'absTime': 16.0, 'label': { arg ev;
+	var label;
+	var receiver = ev[\receiver].value;
+	label = if(receiver.notNil) {
+		if(receiver.isKindOf(PlayerWrapper)) {
+			receiver = receiver.target;
+		};
+		if(
+			receiver.isKindOf(Ndef) or: {
+				receiver.isKindOf(Pdef)
+			}
+		) {
+			"% %".format(receiver.class, receiver.key);
+		} {
+			receiver.asCompileString; // FIXME: could be very long
+		}
+	} {
+		var type;
+		//type =  ev[\nodeType] ? ev[\type] ? ev[\eventType] ?
+		if(ev[\eventType] == \pattern) {
+			if(ev[\pattern].isKindOf(Pdef)) {
+				"% %".format(ev[\pattern].class, ev[\pattern].key);
+			} {
+				if(ev[\key].notNil) {
+					"Pdef %".format(ev[\key])
+				}
+			}
+		};
+		if(ev[\type] == \timeline) {
+			ev.timeline.label
+		}
+	};
+	label = label ?? { "No Name" };
+	label
+}, 'type': 'player' ), ( 'playDur': 0.0, 'dur': 0.0, 'receiver': `(Pdef('glitch')), 'isEmbeddable': true, 
+  'sustain': 8.0, 'midinote': 0.0, 'key': { arg self;
+		if(self.receiver.notNil) {
+			self.receiver.value.key
+		}
+	}, 'absTime': 16.0, 'embedEvent': { arg self, inval;
+		self.pattern.embedInStream(inval);
+	}, 
+  'pattern': { arg self;
+		if(self.key.notNil) {
+			Pdef(self.key);
+		};
+	}, 'eventType': 'pattern', 'relDur': 0.0, 'label': { arg ev;
+	var label;
+	var receiver = ev[\receiver].value;
+	label = if(receiver.notNil) {
+		if(receiver.isKindOf(PlayerWrapper)) {
+			receiver = receiver.target;
+		};
+		if(
+			receiver.isKindOf(Ndef) or: {
+				receiver.isKindOf(Pdef)
+			}
+		) {
+			"% %".format(receiver.class, receiver.key);
+		} {
+			receiver.asCompileString; // FIXME: could be very long
+		}
+	} {
+		var type;
+		//type =  ev[\nodeType] ? ev[\type] ? ev[\eventType] ?
+		if(ev[\eventType] == \pattern) {
+			if(ev[\pattern].isKindOf(Pdef)) {
+				"% %".format(ev[\pattern].class, ev[\pattern].key);
+			} {
+				if(ev[\key].notNil) {
+					"Pdef %".format(ev[\key])
+				}
+			}
+		};
+		if(ev[\type] == \timeline) {
+			ev.timeline.label
+		}
+	};
+	label = label ?? { "No Name" };
+	label
+}, 'type': 'pattern' ), ( 'eventlist': { arg self;
+		self.timeline.eventList
+	}, 'playDur': 6.0, 'dur': 6.0, 'sustain': 8.0, 
+  'midinote': 1.0, 'timeline': ( 'load': { arg me; ~modStepTimeline.new(me.key) }, 'key': 'glitch' ), 'relDur': 6.0, 'absTime': 16.0, 'label': { arg ev;
+	var label;
+	var receiver = ev[\receiver].value;
+	label = if(receiver.notNil) {
+		if(receiver.isKindOf(PlayerWrapper)) {
+			receiver = receiver.target;
+		};
+		if(
+			receiver.isKindOf(Ndef) or: {
+				receiver.isKindOf(Pdef)
+			}
+		) {
+			"% %".format(receiver.class, receiver.key);
+		} {
+			receiver.asCompileString; // FIXME: could be very long
+		}
+	} {
+		var type;
+		//type =  ev[\nodeType] ? ev[\type] ? ev[\eventType] ?
+		if(ev[\eventType] == \pattern) {
+			if(ev[\pattern].isKindOf(Pdef)) {
+				"% %".format(ev[\pattern].class, ev[\pattern].key);
+			} {
+				if(ev[\key].notNil) {
+					"Pdef %".format(ev[\key])
+				}
+			}
+		};
+		if(ev[\type] == \timeline) {
+			ev.timeline.label
+		}
+	};
+	label = label ?? { "No Name" };
+	label
+}, 
+  'type': 'timeline' ), ( 'playDur': 2.0, 'dur': 2.0, 'receiver': `(Pdef('rip')), 'isEmbeddable': true, 
+  'sustain': 2.0, 'midinote': 3.0, 'key': { arg self;
+		if(self.receiver.notNil) {
+			self.receiver.value.key
+		}
+	}, 'absTime': 22.0, 'embedEvent': { arg self, inval;
+		self.pattern.embedInStream(inval);
+	}, 
+  'pattern': { arg self;
+		if(self.key.notNil) {
+			Pdef(self.key);
+		};
+	}, 'eventType': 'pattern', 'relDur': 2.0, 'label': { arg ev;
+	var label;
+	var receiver = ev[\receiver].value;
+	label = if(receiver.notNil) {
+		if(receiver.isKindOf(PlayerWrapper)) {
+			receiver = receiver.target;
+		};
+		if(
+			receiver.isKindOf(Ndef) or: {
+				receiver.isKindOf(Pdef)
+			}
+		) {
+			"% %".format(receiver.class, receiver.key);
+		} {
+			receiver.asCompileString; // FIXME: could be very long
+		}
+	} {
+		var type;
+		//type =  ev[\nodeType] ? ev[\type] ? ev[\eventType] ?
+		if(ev[\eventType] == \pattern) {
+			if(ev[\pattern].isKindOf(Pdef)) {
+				"% %".format(ev[\pattern].class, ev[\pattern].key);
+			} {
+				if(ev[\key].notNil) {
+					"Pdef %".format(ev[\key])
+				}
+			}
+		};
+		if(ev[\type] == \timeline) {
+			ev.timeline.label
+		}
+	};
+	label = label ?? { "No Name" };
+	label
+}, 'type': 'pattern' ), ( 'playDur': 0.0, 'dur': 0.0, 'receiver': `(PlayerWrapper.new), 'sustain': 8.0, 
+  'midinote': 2.0, 'relDur': 0.0, 'absTime': 24.0, 'label': { arg ev;
+	var label;
+	var receiver = ev[\receiver].value;
+	label = if(receiver.notNil) {
+		if(receiver.isKindOf(PlayerWrapper)) {
+			receiver = receiver.target;
+		};
+		if(
+			receiver.isKindOf(Ndef) or: {
+				receiver.isKindOf(Pdef)
+			}
+		) {
+			"% %".format(receiver.class, receiver.key);
+		} {
+			receiver.asCompileString; // FIXME: could be very long
+		}
+	} {
+		var type;
+		//type =  ev[\nodeType] ? ev[\type] ? ev[\eventType] ?
+		if(ev[\eventType] == \pattern) {
+			if(ev[\pattern].isKindOf(Pdef)) {
+				"% %".format(ev[\pattern].class, ev[\pattern].key);
+			} {
+				if(ev[\key].notNil) {
+					"Pdef %".format(ev[\key])
+				}
+			}
+		};
+		if(ev[\type] == \timeline) {
+			ev.timeline.label
+		}
+	};
+	label = label ?? { "No Name" };
+	label
+}, 'type': 'player' ), ( 'eventlist': { arg self;
+		self.timeline.eventList
+	}, 'playDur': 0.0, 'dur': 0.0, 'sustain': 8.0, 
+  'midinote': 1.0, 'timeline': ( 'load': { arg me; ~modStepTimeline.new(me.key) }, 'key': 'glitch3' ), 'relDur': 0.0, 'absTime': 24.0, 'label': { arg ev;
+	var label;
+	var receiver = ev[\receiver].value;
+	label = if(receiver.notNil) {
+		if(receiver.isKindOf(PlayerWrapper)) {
+			receiver = receiver.target;
+		};
+		if(
+			receiver.isKindOf(Ndef) or: {
+				receiver.isKindOf(Pdef)
+			}
+		) {
+			"% %".format(receiver.class, receiver.key);
+		} {
+			receiver.asCompileString; // FIXME: could be very long
+		}
+	} {
+		var type;
+		//type =  ev[\nodeType] ? ev[\type] ? ev[\eventType] ?
+		if(ev[\eventType] == \pattern) {
+			if(ev[\pattern].isKindOf(Pdef)) {
+				"% %".format(ev[\pattern].class, ev[\pattern].key);
+			} {
+				if(ev[\key].notNil) {
+					"Pdef %".format(ev[\key])
+				}
+			}
+		};
+		if(ev[\type] == \timeline) {
+			ev.timeline.label
+		}
+	};
+	label = label ?? { "No Name" };
+	label
+}, 
+  'type': 'timeline' ), ( 'playDur': 7.0, 'dur': 7.0, 'receiver': `(PlayerWrapper.new), 'sustain': 8.0, 
+  'midinote': 4.0, 'relDur': 7.0, 'absTime': 24.0, 'label': { arg ev;
+	var label;
+	var receiver = ev[\receiver].value;
+	label = if(receiver.notNil) {
+		if(receiver.isKindOf(PlayerWrapper)) {
+			receiver = receiver.target;
+		};
+		if(
+			receiver.isKindOf(Ndef) or: {
+				receiver.isKindOf(Pdef)
+			}
+		) {
+			"% %".format(receiver.class, receiver.key);
+		} {
+			receiver.asCompileString; // FIXME: could be very long
+		}
+	} {
+		var type;
+		//type =  ev[\nodeType] ? ev[\type] ? ev[\eventType] ?
+		if(ev[\eventType] == \pattern) {
+			if(ev[\pattern].isKindOf(Pdef)) {
+				"% %".format(ev[\pattern].class, ev[\pattern].key);
+			} {
+				if(ev[\key].notNil) {
+					"Pdef %".format(ev[\key])
+				}
+			}
+		};
+		if(ev[\type] == \timeline) {
+			ev.timeline.label
+		}
+	};
+	label = label ?? { "No Name" };
+	label
+}, 'type': 'player' ), ( 'playDur': 1.0, 'dur': 1.0, 'receiver': `(Pdef('rip')), 'isEmbeddable': true, 
+  'sustain': 1.0, 'midinote': 3.0, 'key': { arg self;
+		if(self.receiver.notNil) {
+			self.receiver.value.key
+		}
+	}, 'absTime': 31.0, 'embedEvent': { arg self, inval;
+		self.pattern.embedInStream(inval);
+	}, 
+  'pattern': { arg self;
+		if(self.key.notNil) {
+			Pdef(self.key);
+		};
+	}, 'eventType': 'pattern', 'relDur': 1.0, 'label': { arg ev;
+	var label;
+	var receiver = ev[\receiver].value;
+	label = if(receiver.notNil) {
+		if(receiver.isKindOf(PlayerWrapper)) {
+			receiver = receiver.target;
+		};
+		if(
+			receiver.isKindOf(Ndef) or: {
+				receiver.isKindOf(Pdef)
+			}
+		) {
+			"% %".format(receiver.class, receiver.key);
+		} {
+			receiver.asCompileString; // FIXME: could be very long
+		}
+	} {
+		var type;
+		//type =  ev[\nodeType] ? ev[\type] ? ev[\eventType] ?
+		if(ev[\eventType] == \pattern) {
+			if(ev[\pattern].isKindOf(Pdef)) {
+				"% %".format(ev[\pattern].class, ev[\pattern].key);
+			} {
+				if(ev[\key].notNil) {
+					"Pdef %".format(ev[\key])
+				}
+			}
+		};
+		if(ev[\type] == \timeline) {
+			ev.timeline.label
+		}
+	};
+	label = label ?? { "No Name" };
+	label
+}, 'type': 'pattern' ), ( 'playDur': 0.0, 'dur': 0.0, 'receiver': `(Pdef('glitch')), 'isEmbeddable': true, 
+  'sustain': 8.0, 'midinote': 0.0, 'key': { arg self;
+		if(self.receiver.notNil) {
+			self.receiver.value.key
+		}
+	}, 'absTime': 32.0, 'embedEvent': { arg self, inval;
+		self.pattern.embedInStream(inval);
+	}, 
+  'pattern': { arg self;
+		if(self.key.notNil) {
+			Pdef(self.key);
+		};
+	}, 'eventType': 'pattern', 'relDur': 0.0, 'label': { arg ev;
+	var label;
+	var receiver = ev[\receiver].value;
+	label = if(receiver.notNil) {
+		if(receiver.isKindOf(PlayerWrapper)) {
+			receiver = receiver.target;
+		};
+		if(
+			receiver.isKindOf(Ndef) or: {
+				receiver.isKindOf(Pdef)
+			}
+		) {
+			"% %".format(receiver.class, receiver.key);
+		} {
+			receiver.asCompileString; // FIXME: could be very long
+		}
+	} {
+		var type;
+		//type =  ev[\nodeType] ? ev[\type] ? ev[\eventType] ?
+		if(ev[\eventType] == \pattern) {
+			if(ev[\pattern].isKindOf(Pdef)) {
+				"% %".format(ev[\pattern].class, ev[\pattern].key);
+			} {
+				if(ev[\key].notNil) {
+					"Pdef %".format(ev[\key])
+				}
+			}
+		};
+		if(ev[\type] == \timeline) {
+			ev.timeline.label
+		}
+	};
+	label = label ?? { "No Name" };
+	label
+}, 'type': 'pattern' ), ( 'playDur': 0.0, 'dur': 0.0, 'receiver': `(PlayerWrapper.new), 'sustain': 8.0, 
+  'midinote': 4.0, 'relDur': 0.0, 'absTime': 32.0, 'label': { arg ev;
+	var label;
+	var receiver = ev[\receiver].value;
+	label = if(receiver.notNil) {
+		if(receiver.isKindOf(PlayerWrapper)) {
+			receiver = receiver.target;
+		};
+		if(
+			receiver.isKindOf(Ndef) or: {
+				receiver.isKindOf(Pdef)
+			}
+		) {
+			"% %".format(receiver.class, receiver.key);
+		} {
+			receiver.asCompileString; // FIXME: could be very long
+		}
+	} {
+		var type;
+		//type =  ev[\nodeType] ? ev[\type] ? ev[\eventType] ?
+		if(ev[\eventType] == \pattern) {
+			if(ev[\pattern].isKindOf(Pdef)) {
+				"% %".format(ev[\pattern].class, ev[\pattern].key);
+			} {
+				if(ev[\key].notNil) {
+					"Pdef %".format(ev[\key])
+				}
+			}
+		};
+		if(ev[\type] == \timeline) {
+			ev.timeline.label
+		}
+	};
+	label = label ?? { "No Name" };
+	label
+}, 'type': 'player' ), ( 'eventlist': { arg self;
+		self.timeline.eventList
+	}, 'playDur': 8.0, 'dur': 8.0, 'sustain': 8.0, 
+  'midinote': 1.0, 'timeline': ( 'load': { arg me; ~modStepTimeline.new(me.key) }, 'key': 'glitch3' ), 'relDur': 8.0, 'absTime': 32.0, 'label': { arg ev;
+	var label;
+	var receiver = ev[\receiver].value;
+	label = if(receiver.notNil) {
+		if(receiver.isKindOf(PlayerWrapper)) {
+			receiver = receiver.target;
+		};
+		if(
+			receiver.isKindOf(Ndef) or: {
+				receiver.isKindOf(Pdef)
+			}
+		) {
+			"% %".format(receiver.class, receiver.key);
+		} {
+			receiver.asCompileString; // FIXME: could be very long
+		}
+	} {
+		var type;
+		//type =  ev[\nodeType] ? ev[\type] ? ev[\eventType] ?
+		if(ev[\eventType] == \pattern) {
+			if(ev[\pattern].isKindOf(Pdef)) {
+				"% %".format(ev[\pattern].class, ev[\pattern].key);
+			} {
+				if(ev[\key].notNil) {
+					"Pdef %".format(ev[\key])
+				}
+			}
+		};
+		if(ev[\type] == \timeline) {
+			ev.timeline.label
+		}
+	};
+	label = label ?? { "No Name" };
+	label
+}, 
+  'type': 'timeline' ), ( 'playDur': 0, 'dur': 0, 'relDur': 0, 'absTime': 40.0, 
+  'type': 'end', 'label': 'end' ) ] ) )
+
+						);
+
+ArchiveDictionary.load( 'test1',
+
+							( 'name': 'test1', 'load': { arg me; ~clipTimeline.new_load(me) }, 'tracks_bypassed': Set[  ], 'areasize': Point(10, 4), 
+  'quant_ref': `(Point(0.125, 1)), 'eventlist': ( 'load': { arg self;
+			~eventlist_loadArchiveData.(self)
+		}, 'eventlist': [ ( 'relDur': 0.5, 'label': 'start', 'absTime': 0, 'type': 'start', 
+  'playDur': 0.5, 'dur': 0.5, 'sustain': 0 ), ( 'timeline': ( 'load': { arg me; ~noteTimeline.new(me.key) }, 'key': 'note_test1' ), 'label': { arg ev;
+	var label;
+	var receiver = ev[\receiver].value;
+	label = if(receiver.notNil) {
+		if(receiver.isKindOf(PlayerWrapper)) {
+			receiver = receiver.target;
+		};
+		if(
+			receiver.isKindOf(Ndef) or: {
+				receiver.isKindOf(Pdef)
+			}
+		) {
+			"% %".format(receiver.class, receiver.key);
+		} {
+			receiver.asCompileString; // FIXME: could be very long
+		}
+	} {
+		var type;
+		//type =  ev[\nodeType] ? ev[\type] ? ev[\eventType] ?
+		if(ev[\eventType] == \pattern) {
+			if(ev[\pattern].isKindOf(Pdef)) {
+				"% %".format(ev[\pattern].class, ev[\pattern].key);
+			} {
+				if(ev[\key].notNil) {
+					"Pdef %".format(ev[\key])
+				}
+			}
+		};
+		if(ev[\type] == \timeline) {
+			ev.timeline.label
+		}
+	};
+	label = label ?? { "No Name" };
+	label
+}, 'dur': 0.5, 'midinote': 2.0, 
+  'type': 'timeline', 'playDur': 0.5, 'absTime': 0.5, 'eventlist': { arg self;
+		self.timeline.eventList
+	}, 'relDur': 0.5, 
+  'sustain': 0.5 ), ( 'absTime': 1, 'relDur': 0, 'type': 'end', 'playDur': 0, 
+  'label': 'end', 'dur': 0 ) ] ) )
+
+						);

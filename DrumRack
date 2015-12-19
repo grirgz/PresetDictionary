@@ -1,0 +1,226 @@
+
+ArchiveDictionary.load( 'test',
+
+							( 'load': { arg self; 
+				var inst;
+				"1".debug;
+				inst = DrumRack(self.name);
+				"2".debug;
+				inst.loadDrumrack(self.drumrack_name);
+				"3".debug;
+				inst;
+			}, 'name': 'test', 'drumrack_name': 'default' )
+
+						);
+
+ArchiveDictionary.load( 'plop',
+
+							( 'load': { arg self; 
+				var inst;
+				"1".debug;
+				inst = DrumRack(self.name);
+				"2".debug;
+				inst.loadDrumrack(self.drumrack_name);
+				"3".debug;
+				inst;
+			}, 'name': 'plop', 'drumrack_name': 'default' )
+
+						);
+
+ArchiveDictionary.load( 'alpha5-8.2rack',
+
+							( 'load': { arg self; 
+				var inst;
+				"1".debug;
+				inst = DrumRack(self.name);
+				"2".debug;
+				inst.loadDrumrack(self.drumrack_name);
+				"3".debug;
+				inst;
+			}, 'name': 'alpha5-8.2rack', 'drumrack_name': 'lapin2' )
+
+						);
+
+ArchiveDictionary.load( 'yak',
+
+							( 'load': { arg self; 
+				var inst;
+				"1".debug;
+				inst = DrumRack(self.name);
+				"2".debug;
+				inst.loadDrumrack(self.drumrack_name);
+				"3".debug;
+				inst;
+			}, 'name': 'yak', 'drumrack_name': 'lapin3' )
+
+						);
+
+ArchiveDictionary.load( 'init',
+
+							( 'load': { arg self; 
+				var inst;
+				"1".debug;
+				inst = DrumRack(self.name);
+				"2".debug;
+				inst.loadDrumrack(self.drumrack_name);
+				"3".debug;
+				inst;
+			}, 'name': 'init', 'drumrack_name': 'default' )
+
+						);
+
+ArchiveDictionary.load( 'glitch',
+
+							( 'load': { arg self; 
+				var inst;
+				"1".debug;
+				inst = DrumRack(self.name);
+				"2".debug;
+				inst.loadDrumrack(self.drumrack_name);
+				"3".debug;
+				inst;
+			}, 'name': 'glitch', 'drumrack_name': 'renard' )
+
+						);
+
+ArchiveDictionary.load( 'norta',
+
+							( 'load': { arg self; 
+				var inst = StepSeq.new(self.name);
+				inst.stepseq = self.stepseq.load;
+				inst;
+			}, 'name': 'norta', 'stepseq': ( 'load': { arg self;
+				var inst = ~class_score_manager.new;
+				inst.putAll(self.data);
+				inst.setStepSpec(self.spec);
+				inst;
+			}, 'spec': ControlSpec(0.0, 1.0, 'linear', 0.0, 0.0, ""), 'data': ( 'score_delta': 0.125, 'banks': List[ BankList[ StepList[ 0.71144982940974, 0.84031585692337, 0, 0, 0, 0, 0, 0 ] ], BankList[ StepList[ 0, 0, 0.75321252177358, 0, 0, 0, 0, 0 ] ], BankList[ StepList[ 0, 0, 0, 0.71741619810389, 0, 0, 0, 0 ] ], BankList[ StepList[ 0, 0, 0, 0, 0, 0.66903531045833, 0, 0 ] ] ], 'score_duration': 1, 'superbank': BankList[ ParDictStepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], ParDictStepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], ParDictStepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], ParDictStepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], ParDictStepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], ParDictStepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], ParDictStepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], ParDictStepList[ 0, 0, 0, 0, 0, 0, 0, 0 ] ], 
+  'track_count': 4, 'current_score': { arg self;
+		self.banks.first.index
+	} ) ) )
+
+						);
+
+ArchiveDictionary.load( 'jop',
+
+							( 'pads': [ ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_oscsampler', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'posenv': Env([ 0.0, 0.13030305414489, 0.56060606241226, 0.20000000298023, 0.093939393758774 ], [ 0.13103448573885, 0.26896552022161, 0.0, 0.59999999403954 ], [ 0.0, 0.0, 0.0, 0.0 ]), 'bufnum': SampleProxy("/home/ggz/Musique/sc/samplekit/vipere/amenbreak.wav"), 'ffreqtab': [ [ 0.261636746004, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ] ], 'framerange': 9.9774651603155, 
+  'levelScale': 0.15166224304942, 'sustain': 0.11407321007633 ) ) ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_oscsampler', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'posenv': Env([ 0.0, 0.14545457200571, 0.0, 0.10606060922146, 0.0 ], [ 0.4274220107787, 0.12889984858105, 0.073563158512115, 0.37011498212814 ], [ 0.0, 0.0, 0.0, 0.0 ]), 'bufnum': SampleProxy("/home/ggz/Musique/beast.wav"), 'pos': 0.18807888541668, 'fshift': -42.397734931523, 
+  'ffreqtab': [ [ 2.535626511623, 1.2456971959012, 0.72273138627857, 0.41613839701498, 0.27454892619577, 0.24364252144159, 0.79867235916129, 1.0 ] ], 'levelScale': 1.4190316344984, 'amp': 0.12963069182693, 'ffreq': 7790.5157055899, 'adsr': Env([ 0.0, 0.96969699859619, 0.55757576227188, 0.0 ], [ 0.0, 0.66172415018082, 0.35303778875442 ], [ -4, -4, -1 ], 2), 
+  'framerange': 0.96046255005485, 'distpreamp': 100.0, 'timeScale': 4.1293900559787, 'distmix': 1.0, 'freq': 1129.9031831108, 
+  'sustain': 0.13819825250672 ) ) ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_oscsampler', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'posenv': Env([ 0.0, 0.14545457200571, 0.0, 0.10606060922146, 0.0 ], [ 0.4274220107787, 0.12889984858105, 0.073563158512115, 0.37011498212814 ], [ 0.0, 0.0, 0.0, 0.0 ]), 'bufnum': SampleProxy("/home/ggz/Musique/beast.wav"), 'pos': 0.27876459243552, 'fshift': -42.397734931523, 
+  'ffreqtab': [ [ 2.535626511623, 1.2456971959012, 0.72273138627857, 0.41613839701498, 0.27454892619577, 0.24364252144159, 0.79867235916129, 1.0 ] ], 'levelScale': 1.4190316344984, 'amp': 0.12963069182693, 'ffreq': 7790.5157055899, 'adsr': Env([ 0.0, 0.96969699859619, 0.55757576227188, 0.0 ], [ 0.0, 0.66172415018082, 0.35303778875442 ], [ -4, -4, -1 ], 2), 
+  'framerange': 0.96046255005485, 'distpreamp': 100.0, 'timeScale': 4.1293900559787, 'distmix': 1.0, 'freq': 1129.9031831108, 
+  'sustain': 0.13819825250672 ) ) ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_oscsampler', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'posenv': Env([ 0.0, 0.14545457200571, 0.0, 0.10606060922146, 0.0 ], [ 0.4274220107787, 0.12889984858105, 0.073563158512115, 0.37011498212814 ], [ 0.0, 0.0, 0.0, 0.0 ]), 'bufnum': SampleProxy("/home/ggz/Musique/beast.wav"), 'pos': 0.18807888541668, 'fshift': -42.397734931523, 
+  'ffreqtab': [ [ 2.535626511623, 1.2456971959012, 0.72273138627857, 0.41613839701498, 0.27454892619577, 0.24364252144159, 0.79867235916129, 1.0 ] ], 'levelScale': 1.4190316344984, 'amp': 0.12963069182693, 'ffreq': 7790.5157055899, 'adsr': Env([ 0.0, 0.96969699859619, 0.55757576227188, 0.0 ], [ 0.0, 0.66172415018082, 1.0197044412295 ], [ -4, -4, -1 ], 2), 
+  'framerange': 0.96046255005485, 'distpreamp': 100.0, 'timeScale': 4.1293900559787, 'distmix': 1.0, 'freq': 1129.9031831108, 
+  'sustain': 0.13819825250672 ) ) ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_oscsampler', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'adsr': Env([ 0.0, 0.96969699859619, 0.55757576227188, 0.0 ], [ 0.0, 0.66172415018082, 0.35303778875442 ], [ -4, -4, -1 ], 2), 'range': 0.0, 'distpreamp': 45.823730763616, 'pos': 0.35, 
+  'levelScale': 0.48805759539336, 'amp': 0.20327004215746, 'freq': 1129.9031831108, 'lpmix': 0.8, 'timeScale': 7.9341154473175, 
+  'rq': 0.43734482957731, 'framerange': 1.3564358395951, 'ffreq': 1832.2805280104, 'posenv': Env([ 0.0, 0.14545457200571, 0.0, 0.10606060922146, 0.0 ], [ 0.4274220107787, 0.12889984858105, 0.073563158512115, 0.37011498212814 ], [ 0.0, 0.0, 0.0, 0.0 ]), 'bufnum': SampleProxy("/home/ggz/Musique/beast.wav"), 
+  'distmix': 1.0, 'fshift': 0.0, 'ffreqtab': [ [ 2.535626511623, 1.2456971959012, 0.72273138627857, 0.41613839701498, 0.27454892619577, 0.24364252144159, 0.79867235916129, 1.0 ] ], 'sustain': 0.13819825250672 ) ) ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ) ], 'load': { arg self; ~class_drumrack.new_load(self); } )
+
+						);
+
+ArchiveDictionary.load( 'alpha5-8.4rack',
+
+							( 'load': { arg self; 
+				var inst;
+				"1".debug;
+				inst = DrumRack(self.name);
+				"2".debug;
+				inst.loadDrumrack(self.drumrack_name);
+				"3".debug;
+				inst;
+			}, 'name': 'alpha5-8.4rack', 'drumrack_name': 'lapin3' )
+
+						);
+
+ArchiveDictionary.load( 'yep',
+
+							( 'load': { arg self; 
+				var inst;
+				"1".debug;
+				inst = DrumRack(self.name);
+				"2".debug;
+				inst.loadDrumrack(self.drumrack_name);
+				"3".debug;
+				inst;
+			}, 'name': 'yep', 'drumrack_name': 'lapin3' )
+
+						);
+
+ArchiveDictionary.load( 'default',
+
+							( 'pads': [ ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_oscsampler', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'ffreqtab': [ [ 0.36362934023633, 2.3089024206679, 0.75502412983875, 0.75502412983875, 0.75502412983875, 0.75502412983875, 2.7500527746351, 0.53890695210473 ] ], 'bufnum': SampleProxy("/home/ggz/Musique/beast.wav") ) ) ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_oscsampler', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'ffreqtab': [ [ 0.63787753728825, 2.0502651111021, 0.93347005930277, 0.75502412983875, 0.6747536452365, 0.79867226017035, 1.0, 2.7500527746351 ] ], 'bufnum': SampleProxy("/home/ggz/Musique/boom.wav") ) ) ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_kick', 'load': { arg x; ~class_preset.new_load(x) }, 'params': (  ) ), ( 'instr': 'dr_oscsampler', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'ffreqtab': [ [ 2.578970768037, 1.5676990355409, 1.3145734825515, 1.057810638865, 0.81019637833276, 0.58857336554965, 1.0, 1.0 ] ] ) ) ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_oscsampler', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'ffreqtab': [ [ 2.7500527746351, 3.4432806944472, 1.7959556395328, 1.118962515561, 0.80007629336322, 2.6795478145905, 8.0, 1.4820227425941 ] ] ) ) ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ) ], 'load': { arg self; ~class_drumrack.new_load(self); } )
+
+						);
+
+ArchiveDictionary.load( 'renard',
+
+							( 'load': { arg self; 
+				var inst;
+				"1".debug;
+				inst = DrumRack(self.name);
+				"2".debug;
+				inst.loadDrumrack(self.drumrack_name);
+				"3".debug;
+				inst;
+			}, 'name': 'renard', 'drumrack_name': 'renard' )
+
+						);
+
+ArchiveDictionary.load( 'alpha5-8.3rack',
+
+							( 'load': { arg self; 
+				var inst;
+				"1".debug;
+				inst = DrumRack(self.name);
+				"2".debug;
+				inst.loadDrumrack(self.drumrack_name);
+				"3".debug;
+				inst;
+			}, 'name': 'alpha5-8.3rack', 'drumrack_name': 'lapin3' )
+
+						);
+
+ArchiveDictionary.load( 'nrw',
+
+							( 'pads': [ ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_kick', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'env1': Env([ 71.515152051593, 31.999999880791, 28.999999418855 ], [ 0.10499999672174, 0.28999998420477 ], [ -4.0, -5.0 ]), 'amp': 0.73039551547442 ) ) ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_oscsampler', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'hpmix': 1.0, 'sustain': 0.18031443350243, 'lpmix': 1.0, 'freq': 48.811813201114, 
+  'timeScale': 10.0, 'rq': 0.23010658104659, 'distmix': 1.0, 'framerange': 410.08102719977, 'fshift': 0.0, 
+  'adsr': Env([ 0.0, 1.0, 0.80000001192093, 0.0 ], [ 0.0099999997764826, 0.099999999627471, 1.6862069054924 ], [ -4.0, -4.0, -4.0 ], 2.0), 'distamp': 1.0, 'distpreamp': 100.0, 'hpfreq': 114.94337759651, 'ffreq': 743.94490533682, 
+  'levelScale': 4.975231449293, 'amp': 0.25, 'bufnum': SampleProxy("/home/ggz/Musique/boom1.wav"), 'ffreqtab': [ [ 0.63787753728825, 2.0502651111021, 0.93347005930277, 0.75502412983875, 0.6747536452365, 0.79867226017035, 1.0, 2.7500527746351 ] ], 'posenv': Env([ 0.0, 0.79696971178055, 0.0, 0.24242424964905, 0.0 ], [ 0.094417080283165, 0.17438422143459, 0.13037768006325, 0.60082101821899 ], [ 0.0, 0.0, 0.0, 0.0 ]) ) ) ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_oscsampler', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'adsr': Env([ 0, 1, 0.484848, 0 ], [ 0.01, 0.149843, 0.939394 ], [ -4, -4, -8 ], 2), 'lpmix': 1.0, 'hpfreq': 3831.3083519374, 'distmix': 0.98391836947681, 
+  'fshift': 0.0, 'freq': 75.683989022001, 'sustain': 0.050449577923943, 'fineposlag': 3238.7950682954, 'ffreq': 232.11031889138, 
+  'distamp': 1.0, 'amp': 0.58622070617486, 'ffreqtab': [ [ 0.35497551616264, 0.34375663943608, 0.34375663943608, 0.34375663943608, 0.36421373379973, 0.43424650897852, 0.53245578978679, 0.75502412983875 ] ], 'posenv': Env([ 0.030303025618196, 0.084848528558558, 0.0, 0.21212121844292, 0.0 ], [ 0.12212270362811, 0.22727272049947, 0.24242421984673, 0.24151366949081 ], [ 0.0, 0.0, 0.0, 0.0 ]), 'distpreamp': 82.808989673827, 
+  'bufnum': SampleProxy("/home/ggz/Musique/boom1.wav"), 'framerange': 8794.120612173, 'hpmix': 0.020397802831599, 'pos': 0.0, 'levelScale': 4.975231449293, 
+  'timeScale': 10.0, 'rq': 0.087664097693461 ) ) ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_oscsampler', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'timeScale': 2.8185444567147, 'levelScale': 0.15166224304942, 'distamp': 0.0, 'framerange': 0.26521538228345, 
+  'hpmix': 0.0, 'amp': 0.77573668217566, 'sustain': 0.11407321007633, 'rq': 0.55583005707152, 'fshift': -38.165403014823, 
+  'ffreq': 7878.3098162644, 'ffreqtab': [ [ 2.3931162988939, 1.6470701918949, 1.211557286026, 1.0, 0.52397410063685, 0.4304100868059, 3.6423380482899, 1.0 ] ], 'hpfreq': 21.383678925443, 'distmix': 0.29433585255335, 'adsr': Env([ 0.0, 1.6060606060606, 0.80000001192093, 0.0 ], [ 0.0, 0.10999999940395, 0.57619048655033 ], [ -4.0, -4.0, -4.0 ], 2.0), 
+  'bufnum': SampleProxy("/home/ggz/Musique/sc/samplekit/vipere/amenbreak.wav"), 'posenv': Env([ 0.0, 0.054545469582081, 0.0, 0.20000000298023, 0.093939393758774 ], [ 0.019047625362873, 0.38095238059759, 0.0, 0.59999999403954 ], [ 0.0, 0.0, 0.0, 0.0 ]) ) ) ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_oscsampler', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'adsr': Env([ 0.0, 1.6060606241226, 0.80000001192093, 0.0 ], [ 0.0, 0.10999999940395, 0.29047620083605 ], [ -4.0, -4.0, -4.0 ], 2.0), 'lpmix': 1.0, 'hpfreq': 99.004108568312, 'distmix': 0.96271358278097, 
+  'fshift': -38.165403014823, 'amp': 0.77573668217566, 'sustain': 0.053676465792121, 'ffreq': 2443.1318655831, 'freq': 79.621434110699, 
+  'distamp': 0.27431411958492, 'finepos': 0.0, 'ffreqtab': [ [ 2.7500527746351, 0.87381839290608, 0.18134548760519, 2.1963914095662, 0.4409029039191, 0.77654162992206, 0.36362934023633, 5.2190368154747 ] ], 'posenv': Env([ 0.0, 0.0090909254821864, 0.0, 0.20000000298023, 0.093939393758774 ], [ 0.09047619998455, 0.30952380597591, 0.0, 0.59999999403954 ], [ 0.0, 0.0, 0.0, 0.0 ]), 'distpreamp': 94.29296786778, 
+  'bufnum': SampleProxy("/home/ggz/Musique/sc/samplekit/vipere/amenbreak.wav"), 'framerange': 0.26521538228345, 'hpmix': 1.0, 'pos': 0.59357495645284, 'levelScale': 2.4319429796044, 
+  'timeScale': 3.0784624263965, 'rq': 0.74526177459193 ) ) ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_kick', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'timeScale': 1.0581960344416, 'env1': Env([ 75.363639652729, 37.772725203724, 27.075755044818 ], [ 0.05403218595121, 1.1383246389237 ], [ -4.0, -5.0 ]), 'env0': Env([ 0.0, 5.9090909957886, 5.4545454626734, 0.0 ], [ 0.045736186206341, 0.12299217647169, 0.68834214294102 ], [ -4.0, -2.0, -4.0 ]), 'fratio': 3.7928043428185, 
+  'amp': 0.71256401029905, 'sustain': 1.9745496503748 ) ) ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_kick', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'timeScale': 1.0581960344416, 'env1': Env([ 58.045454164346, 30.075755506754, 27.075755044818 ], [ 0.72341996431351, 0.46893686056137 ], [ -4.0, -5.0 ]), 'env0': Env([ 0.0, 3.3181819617748, 8.1279060981654e-09, 0.0 ], [ 0.0050857779569924, 0.48884583675356, 0.3631388909085 ], [ -4.0, -2.0, -4.0 ]), 'fratio': 3.7928043428185, 
+  'amp': 0.71256401029905, 'sustain': 1.9745496503748 ) ) ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_oscsampler', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'levelScale': 0.27055257972398, 'timeScale': 6.121549345598, 'framerange': 215.59449884398, 'hpmix': 0.0, 
+  'pan': 0.0, 'amp': 0.61839551344539, 'sustain': 0.13819825250672, 'distpreamp': 1.2300225086599, 'pos': 0.21271358278097, 
+  'ffreq': 7790.5157055899, 'ffreqtab': [ [ 2.535626511623, 1.2456971959012, 0.72273138627857, 0.41613839701498, 0.27454892619577, 0.24364252144159, 0.79867235916129, 1.0 ] ], 'distmix': 0.85214082152403, 'freq': 28.250750892455, 'adsr': Env([ 0.0, 1.0909091234207, 1.7090909481049, 0.0 ], [ 0.0, 0.77666670084, 0.7142857114474 ], [ -4, -4, -1 ], 2), 
+  'bufnum': SampleProxy("/home/ggz/Musique/beast.wav"), 'posenv': Env([ 0.0, 0.13636365532875, 0.25757575035095, 0.075757578918428, 0.0 ], [ 0.45123153924942, 0.17865347862244, 0.14285714285714, 0.227257839271 ], [ 0.0, 0.0, 0.0, 0.0 ]) ) ) ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ), ( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [  ] ) ], 'load': { arg self; ~class_drumrack.new_load(self); } )
+
+						);
+
+ArchiveDictionary.load( 'score',
+
+							( 'load': { arg self; 
+				var inst = StepSeq.new(self.name);
+				inst.stepseq = self.stepseq.load;
+				inst;
+			}, 'name': 'score', 'stepseq': ( 'load': { arg self;
+				var inst = ~class_score_manager.new;
+				inst.putAll(self.data);
+				inst.setStepSpec(self.spec);
+				inst;
+			}, 'spec': ControlSpec(0.0, 1.0, 'linear', 0.0, 0.0, ""), 'data': ( 'score_delta': 0.125, 'banks': List[ BankList[ StepList[ 0, 1.0, 0, 0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 1.0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0.0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0.0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0.0, 0, 0, 0, 0.0, 0, 0.0, 0.0, 0.0, 0, 0, 0, 0.0, 0, 0, 0, 0.0, 0, 0, 0, 0.0, 0, 0.0, 0.0, 0.0, 0, 0, 0, 0.0, 0, 0, 0 ], StepList[ 0.0, 0, 0, 0, 0.0, 0, 0.0, 0.0, 0.0, 0, 0, 0, 0.0, 0, 0, 0, 0.0, 0, 0, 0, 0.0, 0, 0.0, 0.0, 0.0, 0, 0, 0, 0.0, 0, 0, 0 ], StepList[ 1.0, 0.0, 0, 0.0, 0, 0, 0, 0, 1.0, 0.0, 0, 0.0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0.0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 1.0, 0, 0, 0, 1.0, 0, 0, 0, 1.0, 0, 0, 0, 1.0, 0, 0, 0, 1.0, 0, 0, 0, 1.0, 0.0, 0.0, 0, 1.0, 0, 0, 0, 1.0, 0, 0, 0 ], StepList[ 1.0, 0, 0.0, 0.0, 0.0, 0, 1.0, 0, 1.0, 0, 0, 0, 1.0, 0, 0, 0, 1.0, 0, 0, 0, 1.0, 0.0, 0.0, 0, 1.0, 0, 0, 0, 1.0, 0, 0, 0 ], StepList[ 1.0, 0, 1.0, 0, 0, 0, 0, 0, 1.0, 0, 1.0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 1.0, 0, 0, 0, 1.0, 0, 0, 0, 1.0, 0, 0, 0, 1.0, 0, 0, 0, 1.0, 0, 0, 0, 1.0, 0.0, 0.0, 0, 1.0, 0, 0, 0, 1.0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ] ], BankList[ StepList[ 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 1.0, 0, 0, 0 ], StepList[ 1.0, 0, 0, 0, 1.0, 0, 0, 0 ], StepList[ 1.0, 0, 0, 0, 0.0, 0, 0, 0 ], StepList[ 1.0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 1.0, 0, 0, 0, 0.0, 0, 0.0, 0.0, 0.0, 0, 0, 0, 0.0, 0, 0, 0.0, 1.0, 0, 0, 0, 0.0, 0, 0.0, 0, 0.0, 0, 0, 0, 0.0, 0, 0, 0 ], StepList[ 1.0, 0, 0.53434948822922, 0.0, 0.47289965881948, 0.0, 0.0, 0.0, 0.2253154778953, 0.0, 0.56144982940974, 0.0, 0.0, 0, 0.0, 0.0, 0.54031585692337, 0, 0.0, 0.0, 1.0, 0, 0.0, 0.0, 0.0, 0.0, 0.58855017059026, 0.0, 0.46565051177078, 0, 0, 0 ], StepList[ 0.0, 0.99678747822642, 0.0, 0.0, 0.0, 0, 0.0, 0, 0.0, 0.99678747822642, 0.0, 0.0, 1.0, 0, 0.0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 1.0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0.0, 0.0, 0, 0, 1.0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0.0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0.0, 0.0, 0, 0, 1.0, 0, 0, 0, 0, 0 ], StepList[ 0.0, 0, 1.0, 0, 0.0, 0, 0.0, 1.0, 0.0, 0, 0.0, 0, 0.0, 0, 0.0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 1.0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0.0, 0.0, 0, 0, 1.0, 0, 0, 0, 0, 0 ], StepList[ 0, 1.0, 0, 0, 0, 0, 0, 0 ] ], BankList[ StepList[ 1.0, 0, 0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0, 0, 0.0, 0.0, 1.0, 1.0, 1.0 ], StepList[ 1.0, 0, 0, 0.0, 0.0, 0.0, 0.0, 0 ], StepList[ 1.0, 0, 0, 0.0, 0.0, 0.0, 0.0, 0 ], StepList[ 1.0, 0, 0, 0.0, 0.0, 0.0, 0.0, 0 ], StepList[ 1.0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0.0, 0, 0.67990875538299, 0, 1.0, 0, 0, 0.63412119436425, 0.71599625451508, 0.0, 0, 0, 0.60321252177358, 0, 0.71599625451508, 0, 0.0, 0, 0.0, 0, 1.0, 0, 0, 0.67710034118052, 0, 0.0, 0, 0, 1.0, 0, 0, 0 ], StepList[ 0.0, 0, 0.0, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 0.0, 0.0, 0, 0.60321252177358, 0, 0.71599625451508, 0, 0.0, 0, 0.0, 0, 1.0, 0, 0, 0.67710034118052, 0, 0.0, 0, 0, 1.0, 0, 0, 0 ], StepList[ 0, 0, 1.0, 0, 0, 1.0, 0, 1.0, 0, 0, 1.0, 0, 0, 1.0, 0, 0 ], StepList[ 1.0, 0, 0, 0, 1.0, 0, 1.0, 0 ], StepList[ 1.0, 0, 1.0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0, 0.0, 0, 0, 1.0, 0, 0, 0, 0, 0.0, 1.0, 0, 0.0, 0, 0, 0, 0, 0.0, 0, 0, 1.0, 0 ], StepList[ 0, 0, 0, 0, 1.0, 0, 0.0, 0, 0, 0.0, 0.0, 0.0, 0, 0, 1.0, 0, 0, 0, 0, 0.0, 1.0, 0, 0.0, 0, 0, 0, 0, 0.0, 0, 0, 1.0, 0 ], StepList[ 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0, 0.0, 0, 0, 1.0, 0, 0, 0, 0, 0.0, 1.0, 0, 0.0, 0, 0, 0, 0, 0.0, 0, 0, 1.0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ] ], BankList[ StepList[ 1.0, 0, 0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0, 0, 0.0, 0.0, 1.0, 1.0, 1.0 ], StepList[ 1.0, 0, 0, 0.0, 0.0, 0, 0, 0 ], StepList[ 1.0, 0, 0, 0.0, 0.0, 0, 0, 0 ], StepList[ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ], StepList[ 1.0, 0, 1.0, 0, 0, 0, 0, 0 ], StepList[ 1.0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0.0, 0, 0, 0, 0 ], StepList[ 1.0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0.0, 0, 0, 0, 0 ], StepList[ 1.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0.0, 0, 0, 0, 0.0, 0, 0, 0, 0, 0 ], StepList[ 0, 1.0, 0, 0.0, 0, 0.0, 1.0, 0.0, 0, 0.0, 0.0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0.0, 0, 0, 0, 0.0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0.0, 0, 0, 0, 0.0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ] ], BankList[ StepList[ 0.0, 0, 0, 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0, 0, 0, 0.0, 0.0, 0.0, 0.0 ], StepList[ 0.0, 0, 0, 0, 0.0, 0, 0, 0 ], StepList[ 0.0, 0, 0, 0, 0.0, 0, 0, 0 ], StepList[ 0.0, 0.0, 0.0, 0, 0.0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 1.0, 0, 0.0, 0, 1.0, 0, 0, 0, 1.0, 0, 0.0, 0.0, 1.0, 0, 0.0, 0, 1.0, 0, 0.0, 0, 1.0, 0, 0, 0, 1.0, 0, 0.0, 0.0, 1.0, 0, 0.0, 0 ], StepList[ 1.0, 0, 0.0, 0, 1.0, 0, 0, 0, 1.0, 0, 0.0, 0.0, 1.0, 0, 0.0, 0, 1.0, 0, 0.0, 0, 1.0, 0, 0, 0, 1.0, 0, 0.0, 0.0, 1.0, 0, 0.0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 1.0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0, 0.0, 1.0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 1.0, 0.46565051177078, 1.0, 0, 1.0, 0.37113397248637, 1.0, 0, 1.0, 0, 1.0, 0.43855017059026, 1.0, 0, 1.0, 0.43855017059026 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ] ], BankList[ StepList[ 0, 0.0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0.0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0.0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0.0, 0.0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 1.0, 0, 0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 1.0, 0.1508547905451, 0.09464165917917, 0.583389644927, 0.0, 0.57876459243552, 0.6876997749134, 0.63096468954167 ], StepList[ 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0.0, 0, 1.0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ] ], BankList[ StepList[ 1.0, 0, 0, 0, 1.0, 1.0, 1.0, 1.0, 1.0, 0, 0, 0, 1.0, 1.0, 1.0, 1.0 ], StepList[ 1.0, 0, 0, 0, 1.0, 0, 0, 0 ], StepList[ 1.0, 0, 0, 0, 1.0, 0, 0, 0 ], StepList[ 0.0, 0, 0.0, 0, 0.0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0.0, 0.0, 0, 0, 0.0, 0, 0, 0.0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0.0, 0.0, 0, 0, 0.0, 0, 0, 0.0, 0, 0, 0, 0, 0.0, 0, 0, 0 ], StepList[ 0.0, 0.0, 0, 0, 0.0, 0, 0, 0.0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0.0, 0.0, 0, 0, 0.0, 0, 0, 0.0, 0, 0, 0, 0, 0.0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 1.0, 0, 0, 0, 1.0, 0 ], StepList[ 1.0, 0, 0, 0, 0.0, 0.0, 0, 0, 1.0, 0, 0.0, 0, 1.0, 0, 0, 0.0, 0, 0, 1.0, 0, 0, 0, 1.0, 0.0, 0, 0, 1.0, 0.0, 1.0, 0, 0.0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ] ], BankList[ StepList[ 0.0, 0, 0, 0, 0, 0.0, 0.0, 0.0, 0.0, 0, 0, 0, 0, 0.0, 0.0, 0.0 ], StepList[ 0.0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0.0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0.0, 0, 0, 0.0, 1.0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0 ], StepList[ 1.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], StepList[ 0, 0, 0, 0, 0, 0, 0, 0 ] ] ], 'score_duration': 1, 'superbank': BankList[ ParDictStepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], ParDictStepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], ParDictStepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], ParDictStepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], ParDictStepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], ParDictStepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], ParDictStepList[ 0, 0, 0, 0, 0, 0, 0, 0 ], ParDictStepList[ 0, 0, 0, 0, 0, 0, 0, 0 ] ], 
+  'track_count': 8, 'current_score': { arg self;
+		self.banks.first.index
+	} ) ) )
+
+						);

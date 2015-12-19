@@ -1,0 +1,79 @@
+
+ArchiveDictionary.load( 'tam',
+
+							( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_oscsampler', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'sustain': 0.064049432772202, 'bufnum': SampleProxy("/home/ggz/Musique/sc/samplekit/vipere/amen-break.wav"), 'pos': 0.51466235118332, 'ffreqtab': [ [ 0.63787753728825, 0.63787753728825, 1.9628815394271, 1.9628815394271, 0.89745957433463, 1.3244611455768, 1.1836504534515, 1.0 ] ], 
+  'timeScale': 2.3922566328648, 'levelScale': 0.12897511925628, 'adsr': Env([ 0.0, 1.0, 0.80000001192093, 0.0 ], [ 0.0099999997764826, 0.099999999627471, 0.33809524703593 ], [ -4.0, -4.0, -4.0 ], 2.0), 'range': 0.0, 'framerange': 1.8199256114525, 
+  'posenv': Env([ 0.22727273404598, 0.50909090042114, 0.51515151876392, 0.45757573843002, 0.0030303050298244 ], [ 0.23809523880482, 0.28571428500471, 0.47619047619048, 0.0 ], [ 0.0, 0.0, 0.0, 0.0 ]) ) ) ] )
+
+						);
+
+ArchiveDictionary.load( 'ppp',
+
+							( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_kick', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'amp': 0.56732910295651 ) ) ] )
+
+						);
+
+ArchiveDictionary.load( 'shlack2',
+
+							( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_oscsampler', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'range': 0.0, 'adsr': Env([ 0.0, 1.0, 0.86060607433319, 0.0 ], [ 0.0099999997764826, 0.43333332799375, 0.24285714257331 ], [ -4.0, -4.0, -4.0 ], 2.0), 'posenv': Env([ 0.22727273404598, 0.50909090042114, 0.51515151876392, 0.45757573843002, 0.0030303050298244 ], [ 0.23809523880482, 0.28571428500471, 0.47619047619048, 0.0 ], [ 0.0, 0.0, 0.0, 0.0 ]), 'hpfreq': 712.81082222813, 
+  'bufnum': SampleProxy("/home/ggz/Musique/sc/samplekit/vipere/amen-break.wav"), 'framerange': 2.2377461342678, 'ffreq': 1832.2805280104, 'sustain': 0.064049432772202, 'levelScale': 0.12897511925628, 
+  'ffreqtab': [ [ 0.63787753728825, 0.63787753728825, 1.9628815394271, 1.9628815394271, 0.89745957433463, 1.3244611455768, 1.1836504534515, 1.0 ] ], 'timeScale': 2.5834189172009, 'hpmix': 1.0, 'pos': 0.59684868033026, 'rq': 0.69770482544064 ) ) ] )
+
+						);
+
+ArchiveDictionary.load( 'dr_kick',
+
+							( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_kick', 'load': { arg x; ~class_preset.new_load(x) }, 'params': (  ) ) ] )
+
+						);
+
+ArchiveDictionary.load( 'kicksnare',
+
+							( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_kick', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'env1': Env([ 65.742424778866, 31.999999880791, 28.999999418855 ], [ 0.10499999672174, 0.28999998420477 ], [ -4.0, -5.0 ]), 'env0': Env([ 0.0, 1.9545454233885, 0.0, 0.0 ], [ 0.0081300809979439, 0.15117884427309, 0.061788639280854 ], [ -4.0, -2.0, -4.0 ]), 'amp': 0.4979618889916 ) ), ( 'instr': 'dr_oscsampler', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'pos': 0.59684868033026, 'levelScale': 0.20569592479948, 'adsr': Env([ 0.0, 1.0, 0.80000001192093, 0.0 ], [ 0.0099999997764826, 0.099999999627471, 0.33809524703593 ], [ -4.0, -4.0, -4.0 ], 2.0), 'sustain': 0.064049432772202, 
+  'bufnum': SampleProxy("/home/ggz/Musique/sc/samplekit/vipere/amen-break.wav"), 'framerange': 1.0092949098145, 'range': 0.0, 'posenv': Env([ 0.22727273404598, 0.50909090042114, 0.51515151876392, 0.45757573843002, 0.0030303050298244 ], [ 0.23809523880482, 0.28571428500471, 0.47619047619048, 0.0 ], [ 0.0, 0.0, 0.0, 0.0 ]), 'ffreqtab': [ [ 0.63787753728825, 0.63787753728825, 1.9628815394271, 1.9628815394271, 0.89745957433463, 1.3244611455768, 1.1836504534515, 1.0 ] ], 
+  'timeScale': 4.2324203612285, 'amp': 0.088119139013815 ) ) ] )
+
+						);
+
+ArchiveDictionary.load( 'low_kick',
+
+							( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_kick', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'env0': Env([ 0.0, 1.5454545021057, 4.045454621315, 0.0 ], [ 0.031829264014959, 0.37138212099671, 0.26504065108493 ], [ -4.0, -2.0, -4.0 ]), 'fratio': 1.7470030635816, 'env1': Env([ 59.96969601512, 26.227272436023, 25.15151457037 ], [ 0.21928571164608, 0.23285712642329 ], [ -4.0, -5.0 ]), 'amp': 0.27286636613682 ) ) ] )
+
+						);
+
+ArchiveDictionary.load( 'kick1',
+
+							( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_kick', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'env0': Env([ 0.0, 2.7727272334424, 0.90909089148045, 0.0 ], [ 0.015569102019072, 0.10308941826224, 0.10243903845549 ], [ -4.0, -2.0, -4.0 ]), 'amp': 0.28912104794192, 'env1': Env([ 81.136361420155, 49.318179978566, 28.999999418855 ], [ 0.031530608069532, 0.36346937285698 ], [ -4.0, -5.0 ]), 'fratio': 2.1088497261806, 
+  'timeScale': 0.595 ) ) ] )
+
+						);
+
+ArchiveDictionary.load( 'dr_oscsampler',
+
+							( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_oscsampler', 'load': { arg x; ~class_preset.new_load(x) }, 'params': (  ) ) ] )
+
+						);
+
+ArchiveDictionary.load( 'shlack3',
+
+							( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_oscsampler', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'range': 0.0, 'adsr': Env([ 0.0, 1.0, 0.76969701051712, 0.0 ], [ 0.0099999997764826, 0.052380947396159, 0.24285715782926 ], [ -4.0, -4.0, -4.0 ], 2.0), 'posenv': Env([ 0.22727273404598, 0.50909090042114, 0.51515151876392, 0.45757573843002, 0.0030303050298244 ], [ 0.23809523880482, 0.28571428500471, 0.47619047619048, 0.0 ], [ 0.0, 0.0, 0.0, 0.0 ]), 'hpfreq': 712.81082222813, 
+  'bufnum': SampleProxy("/home/ggz/Musique/sc/samplekit/vipere/amen-break.wav"), 'framerange': 2.2377461342678, 'ffreq': 1832.2805280104, 'sustain': 0.064049432772202, 'levelScale': 0.12897511925628, 
+  'ffreqtab': [ [ 0.63787753728825, 0.63787753728825, 1.9628815394271, 1.9628815394271, 0.89745957433463, 1.3244611455768, 1.1836504534515, 1.0 ] ], 'timeScale': 2.5834189172009, 'hpmix': 1.0, 'pos': 0.59684868033026, 'rq': 0.69770482544064 ) ), ( 'instr': 'dr_oscsampler', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'range': 0.0, 'adsr': Env([ 0.0, 1.0, 0.86060607433319, 0.0 ], [ 0.0099999997764826, 0.43333332799375, 0.24285714257331 ], [ -4.0, -4.0, -4.0 ], 2.0), 'posenv': Env([ 0.22727273404598, 0.50909090042114, 0.51515151876392, 0.45757573843002, 0.0030303050298244 ], [ 0.23809523880482, 0.28571428500471, 0.47619047619048, 0.0 ], [ 0.0, 0.0, 0.0, 0.0 ]), 'hpfreq': 712.81082222813, 
+  'bufnum': SampleProxy("/home/ggz/Musique/sc/samplekit/vipere/amen-break.wav"), 'framerange': 2.2377461342678, 'ffreq': 1832.2805280104, 'sustain': 0.055617617672532, 'levelScale': 0.12897511925628, 
+  'ffreqtab': [ [ 0.63787753728825, 0.63787753728825, 1.9628815394271, 1.9628815394271, 0.89745957433463, 1.3244611455768, 1.1836504534515, 1.0 ] ], 'timeScale': 4.1733533111564, 'hpmix': 1.0, 'pos': 0.59684868033026, 'rq': 0.69770482544064 ) ) ] )
+
+						);
+
+ArchiveDictionary.load( 'shlack',
+
+							( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_oscsampler', 'load': { arg x; ~class_preset.new_load(x) }, 'params': ( 'sustain': 0.064049432772202, 'bufnum': SampleProxy("/home/ggz/Musique/sc/samplekit/vipere/amen-break.wav"), 'pos': 0.59684868033026, 'ffreqtab': [ [ 0.63787753728825, 0.63787753728825, 1.9628815394271, 1.9628815394271, 0.89745957433463, 1.3244611455768, 1.1836504534515, 1.0 ] ], 
+  'timeScale': 2.3922566328648, 'levelScale': 0.12897511925628, 'adsr': Env([ 0.0, 1.0, 0.80000001192093, 0.0 ], [ 0.0099999997764826, 0.099999999627471, 0.33809524703593 ], [ -4.0, -4.0, -4.0 ], 2.0), 'range': 0.0, 'framerange': 1.8199256114525, 
+  'posenv': Env([ 0.22727273404598, 0.50909090042114, 0.51515151876392, 0.45757573843002, 0.0030303050298244 ], [ 0.23809523880482, 0.28571428500471, 0.47619047619048, 0.0 ], [ 0.0, 0.0, 0.0, 0.0 ]) ) ) ] )
+
+						);
+
+ArchiveDictionary.load( 'dr_oscsampler_table',
+
+							( 'load': { arg self; ~class_presetgroup.new_load(self); }, 'list': [ ( 'instr': 'dr_oscsampler_table', 'load': { arg x; ~class_preset.new_load(x) }, 'params': (  ) ) ] )
+
+						);

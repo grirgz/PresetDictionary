@@ -1,0 +1,112 @@
+
+ArchiveDictionary.load( 'modstep_test1',
+
+							( 'name': 'modstep_test1', 'load': { arg me; ~modStepTimeline.new_load(me) }, 'stepTimeline': ( 'name': 'modstep_test1', 'load': { arg me; ~stepTimeline.new_load(me) }, 'areasize': Point(10, 4), 'quant_ref': `(Point(0.125, 1)), 
+  'eventlist': ( 'load': { arg self;
+			~eventlist_loadArchiveData.(self)
+		}, 'eventlist': [ ( 'playDur': 0.25, 'dur': 0.25, 'sustain': 0, 'relDur': 0.25, 
+  'absTime': 0, 'type': 'start', 'label': 'start' ), ( 'playDur': 0.75, 'dur': 0.75, 'stepseq_page': ( 'load': { arg me;
+				~stepseq_page.new_load(me)
+			}, 'lines': List[ ( 'dur': 0.25, 'isRest': StepList[ 0.76565051177078, 0.0, 0.5, 0.0 ] ), ( 'dur': 1, 'isRest': StepList[ 1.0 ] ), ( 'dur': 0.125, 'isRest': StepList[ 0, 0 ] ), ( 'dur': 1, 'isRest': StepList[ 1.0 ] ), ( 'dur': 1, 'isRest': StepList[ 0 ] ), ( 'dur': 1, 'isRest': StepList[ 0 ] ), ( 'dur': 1, 'isRest': StepList[ 0 ] ), ( 'dur': 1, 'isRest': StepList[ 0 ] ), ( 'dur': 1, 'isRest': StepList[ 0 ] ), ( 'dur': 1, 'isRest': StepList[ 0 ] ), ( 'dur': 1, 'isRest': StepList[ 0 ] ), ( 'dur': 1, 'isRest': StepList[ 0 ] ), ( 'dur': 1, 'isRest': StepList[ 0 ] ), ( 'dur': 1, 'isRest': StepList[ 0 ] ), ( 'dur': 1, 'isRest': StepList[ 0 ] ), ( 'dur': 1, 'isRest': StepList[ 0 ] ) ], 'label': "bla" ), 'isEmbeddable': true, 
+  'sustain': 0.5, 'midinote': 3.0, 'key': { arg self;
+		if(self.receiver.notNil) {
+			self.receiver.value.key
+		}
+	}, 'edit': { arg me, drumrack; me.stepseq_page.edit(drumrack) }, 'absTime': 0.25, 
+  'load': { arg datame;
+				datame[\stepseq_page] = datame.stepseq_page.load;
+			}, 'embedEvent': { arg self, inval;
+		self.pattern.embedInStream(inval);
+	}, 'pattern': { arg me; 
+			me.stepseq_page.xasPattern(me);
+			//Ppar(
+			//	me.stepseq_page.asPatternList.collect({ arg pat,i;
+			//		~pdemul.(
+			//			PchainT(
+			//				pat, 
+			//				Plazy({
+			//					//me[\drumrack].debug("event drumrack ?");
+			//					if(me[\drumrack].notNil and: {me[\drumrack].get_pad(i).patternList.size > 0}) {
+			//						//[i,me[\drumrack].get_pad(i)].debug("drum i");
+			//						Ptuple(
+			//							me[\drumrack].get_pad(i).patternList.collect({ arg pat, j;
+			//								if(me[\modulators].notNil) {
+			//									pat = me[\modulators].value.get_pad_modulator_pattern(i,j) <> pat;
+			//								};
+			//								pat;
+			//							});
+			//						).keep(1);
+			//					} {
+			//						Ptuple([Pbind().keep(1)])
+			//					}
+			//				}).loop
+			//			)
+			//		)
+			//	})
+			//)
+			//Pbind(
+			//	\instrument, \default,
+			//	\freq, 200,
+			//	\dur, 1/8,
+			//	\amp, 0.1
+			//);
+		}, 'asArchiveData': { arg me;
+			var data = me.copy;
+			data[\stepseq_page] = data.stepseq_page.asArchiveData;
+			data[\load] = { arg datame;
+				datame[\stepseq_page] = datame.stepseq_page.load;
+			};
+		}, 'eventType': 'pattern', 
+  'relDur': 0.75, 'label': { arg me; me.stepseq_page.label }, 'type': 'pattern' ), ( 'playDur': 0, 'dur': 0, 'relDur': 0, 'absTime': 1, 
+  'type': 'end', 'label': 'end' ) ] ) ) )
+
+						);
+
+ArchiveDictionary.load( 'test1',
+
+							( 'name': 'test1', 'load': { arg me; ~clipTimeline.new_load(me) }, 'tracks_bypassed': Set[  ], 'areasize': Point(10, 4), 
+  'quant_ref': `(Point(0.125, 1)), 'eventlist': ( 'load': { arg self;
+			~eventlist_loadArchiveData.(self)
+		}, 'eventlist': [ ( 'playDur': 0.5, 'dur': 0.5, 'sustain': 0, 'relDur': 0.5, 
+  'absTime': 0, 'type': 'start', 'label': 'start' ), ( 'eventlist': { arg self;
+		self.timeline.eventList
+	}, 'playDur': 0.5, 'dur': 0.5, 'sustain': 0.5, 
+  'midinote': 2.0, 'timeline': ( 'load': { arg me; ~noteTimeline.new(me.key) }, 'key': 'note_test1' ), 'relDur': 0.5, 'absTime': 0.5, 'label': { arg ev;
+	var label;
+	var receiver = ev[\receiver].value;
+	label = if(receiver.notNil) {
+		if(receiver.isKindOf(PlayerWrapper)) {
+			receiver = receiver.target;
+		};
+		if(
+			receiver.isKindOf(Ndef) or: {
+				receiver.isKindOf(Pdef)
+			}
+		) {
+			"% %".format(receiver.class, receiver.key);
+		} {
+			receiver.asCompileString; // FIXME: could be very long
+		}
+	} {
+		var type;
+		//type =  ev[\nodeType] ? ev[\type] ? ev[\eventType] ?
+		if(ev[\eventType] == \pattern) {
+			if(ev[\pattern].isKindOf(Pdef)) {
+				"% %".format(ev[\pattern].class, ev[\pattern].key);
+			} {
+				if(ev[\key].notNil) {
+					"Pdef %".format(ev[\key])
+				}
+			}
+		};
+		if(ev[\type] == \timeline) {
+			ev.timeline.label
+		}
+	};
+	label = label ?? { "No Name" };
+	label
+}, 
+  'type': 'timeline' ), ( 'playDur': 0, 'dur': 0, 'relDur': 0, 'absTime': 1, 
+  'type': 'end', 'label': 'end' ) ] ) )
+
+						);
